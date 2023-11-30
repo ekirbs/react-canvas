@@ -1,11 +1,14 @@
+import React from 'react';
 import './optionsbtn.css';
 
-function OptionsBtn() {
+function Options({ toggleOptions }) {
   return (
-    <div className="OptionsBtn">
-      
-    </div>
+    <>
+      <button id="options" onClick={toggleOptions}>
+        Options
+      </button>
+    </>
   );
 }
 
-export default OptionsBtn;
+export default Options;
