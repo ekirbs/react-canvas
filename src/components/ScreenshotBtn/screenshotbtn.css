@@ -1,5 +1,4 @@
 .screenshotBtn {
-  margin: 1vh;
   position: absolute;
   top: 1vh;
   left: 1vh;
@@ -19,4 +18,10 @@
   transform: scale(0.9);
   box-shadow: 1px 1px 2px black;
   background-color: #FFFFCC;
+}
+
+@media screen and (max-width: 500px) {
+  .screenshotBtn {
+    margin: 1vh;
+  }
 }
