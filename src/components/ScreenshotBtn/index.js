@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaCamera } from "react-icons/fa";
 import './screenshotbtn.css';
 
 function ScreenshotBtn() {
@@ -15,9 +16,7 @@ function ScreenshotBtn() {
 
   return (
     <>
-      <button id="screenshot" onClick={takeScreenshot}>
-        Take Screenshot
-      </button>
+      <FaCamera className="FaCamera" onClick={takeScreenshot} />
     </>
   );
 }

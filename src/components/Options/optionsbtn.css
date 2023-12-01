@@ -1,12 +1,14 @@
 .optionsBtn {
   position: absolute;
-  top: 11vh;
-  right: 10px;
+  top: 1vh;
+  right: 1vh;
   padding: 10px;
   background-color: #ccc;
+  border-radius: 50%;
   border: none;
   cursor: pointer;
   height: 10vh;
   width: 10vh;
   z-index: 9999;
+  box-shadow: 2px 2px 4px black;
 }
