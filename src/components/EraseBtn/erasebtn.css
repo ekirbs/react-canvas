@@ -1,8 +1,9 @@
 .eraseBtn {
+  margin: 1vh;
   position: absolute;
   bottom: 1vh;
   left: 1vh;
-  padding: 20px;
+  padding: 10px;
   background-color: salmon;
   border-radius: 50%;
   border: none;
