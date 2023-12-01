@@ -4,6 +4,7 @@ import {
   Canvas,
   Fullscreen,
   OptionsBtn,
+  OptionsPanel,
   EraseBtn,
   ScreenshotBtn
 } from "./components";
@@ -36,6 +37,7 @@ function App() {
       <OptionsBtn toggleOptions={toggleOptions} />
       {optionsVisible && (
         <>
+          <OptionsPanel />
           <EraseBtn />
           <ScreenshotBtn />
         </>
