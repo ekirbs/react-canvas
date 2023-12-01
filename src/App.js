@@ -3,7 +3,7 @@ import './App.css';
 import {
   Canvas,
   Fullscreen,
-  Options,
+  OptionsBtn,
   EraseBtn,
   ScreenshotBtn
 } from "./components";
@@ -33,7 +33,7 @@ function App() {
     <div className="App">
       <Fullscreen toggleFullscreenCallback={toggleFullscreen} />
       <Canvas resizeOnFullscreen={isFullscreen} />
-      <Options toggleOptions={toggleOptions} />
+      <OptionsBtn toggleOptions={toggleOptions} />
       {optionsVisible && (
         <>
           <EraseBtn />
