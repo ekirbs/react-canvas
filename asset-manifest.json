@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-canvas/static/css/main.1a5cb4cb.css",
+    "main.js": "/react-canvas/static/js/main.a9b4540e.js",
+    "index.html": "/react-canvas/index.html",
+    "main.1a5cb4cb.css.map": "/react-canvas/static/css/main.1a5cb4cb.css.map",
+    "main.a9b4540e.js.map": "/react-canvas/static/js/main.a9b4540e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1a5cb4cb.css",
+    "static/js/main.a9b4540e.js"
+  ]
+}
