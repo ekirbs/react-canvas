@@ -16,7 +16,7 @@ function ScreenshotBtn() {
 
   return (
     <>
-      <FaCamera className="FaCamera" onClick={takeScreenshot} />
+      <FaCamera className="screenshotBtn" onClick={takeScreenshot} />
     </>
   );
 }
