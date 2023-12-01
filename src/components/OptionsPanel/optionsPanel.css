@@ -67,12 +67,24 @@
   transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
 }
 
+.lineWidthVar {
+  margin: 1vh;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
 .lineWidthSm:active,
 .lineWidthMd:active,
 .lineWidthLg:active {
   transform: scale(0.9);
   box-shadow: 1px 1px 2px black;
   background-color: #9b9b9b;
+}
+
+.lineWidthVar:active {
+  transform: scale(0.9);
 }
 
 @media screen and (max-width: 500px) {
