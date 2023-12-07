@@ -10,6 +10,7 @@
   height: 50vh;
   z-index: 9999;
   box-shadow: 2px 2px 4px black;
+  opacity: 25%;
 
   display: flex;
   align-items: center;
