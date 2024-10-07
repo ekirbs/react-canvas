@@ -2,7 +2,7 @@ import React from 'react';
 import { FaInfinity } from "react-icons/fa";
 import './optionsPanel.css';
 
-function OptionsPanel() {
+function OptionsPanel({ isOpen }) {
 
   const setLineWidth = (width) => {
     const canvas = document.getElementById('draw');
@@ -37,7 +37,7 @@ function OptionsPanel() {
   return (
     <>
       <div>
-        <div className="options-panel">
+        <div className={`options-panel ${isOpen ? 'open' : 'closed'}`}>
           {/* <div className="options-panel-background"> */}
             <div className="line-width-container">
               <h2 className="line-width-title">Line Width</h2>

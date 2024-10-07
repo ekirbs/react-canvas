@@ -1,15 +1,16 @@
 .options-panel {
-  position: absolute;
+  /* position: absolute; */
+  position: fixed;
   bottom: 1vh;
   right: 1vh;
   border: 5px solid black;
   border-radius: 10px;
-  width: 50vw;
-  height: 50vh;
+  width: 25vw;
+  height: 25vh;
   z-index: 9999;
   box-shadow: 2px 2px 4px black;
   display: flex;
-  align-items: center;
+  align-items:flex-start;
   /* justify-content: flex-start; */
   justify-content: center;
 
@@ -38,6 +39,7 @@
 
 .line-width-title {
   text-decoration: underline;
+  font-size: xx-large;
 }
 
 .line-width-buttons {
