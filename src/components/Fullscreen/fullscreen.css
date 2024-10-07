@@ -12,8 +12,10 @@
   cursor: pointer;
   /* height: 10vh;
   width: 10vh; */
-  height: 8vh;
-  width: 8vh;
+  /* height: 8vh;
+  width: 8vh; */
+  height: 50px;
+  width: 50px;
   z-index: 9998;
 
   visibility: hidden;

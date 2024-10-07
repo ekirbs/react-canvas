@@ -1,5 +1,5 @@
 .screenshotBtn {
-  position: absolute;
+  position: fixed;
   top: 1vh;
   left: 1vh;
   padding: 10px;
@@ -7,8 +7,10 @@
   border-radius: 50%;
   border: none;
   cursor: pointer;
-  height: 8vh;
-  width: 8vh;
+  /* height: 8vh;
+  width: 8vh; */
+  height: 50px;
+  width: 50px;
   z-index: 9999;
   box-shadow: 2px 2px 4px black;
   transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
@@ -19,9 +21,9 @@
   box-shadow: 1px 1px 2px black;
   background-color: #FFFFCC;
 }
-
+/* 
 @media screen and (max-width: 500px) {
   .screenshotBtn {
     margin: 1vh;
   }
-}
+} */
