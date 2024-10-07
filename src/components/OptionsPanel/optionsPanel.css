@@ -2,7 +2,7 @@
   position: fixed;
   bottom: 1vh;
   right: 1vh;
-    border: 2px solid black;
+  border: 2px solid black;
   border-radius: 10px;
   width: 400px;
   height: 300px;
@@ -26,6 +26,7 @@
   text-decoration: underline;
   font-size: 30px;
   text-align: center;
+  margin: 25px;
 }
 
 .line-width-buttons {

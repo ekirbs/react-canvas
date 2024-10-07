@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from 'react';
+// import React, { useEffect, useState } from 'react';
 import './fullscreen.css';
 
 function Fullscreen({ toggleFullscreenCallback }) {
-  const [isMobile, setIsMobile] = useState(false);
+  // const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
-    // Check if the user is on a mobile device
-    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    if (/android|iPad|iPhone|iPod/i.test(userAgent)) {
-      setIsMobile(true); // Mark as mobile device
-    }
-  }, []);
+  // useEffect(() => {
+  //   // Check if the user is on a mobile device
+  //   const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+  //   if (/android|iPad|iPhone|iPod/i.test(userAgent)) {
+  //     setIsMobile(true); // Mark as mobile device
+  //   }
+  // }, []);
 
   const toggleFullscreen = () => {
     const elem = document.documentElement;
@@ -34,11 +34,11 @@ function Fullscreen({ toggleFullscreenCallback }) {
 
   return (
     <div className="Fullscreen">
-      {!isMobile && (
+      {/* {!isMobile && ( */}
         <button id="fullscreen" onClick={toggleFullscreen}>
           Fullscreen
         </button>
-      )}
+      {/* )} */}
     </div>
   );
 }

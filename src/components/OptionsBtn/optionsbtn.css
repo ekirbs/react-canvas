@@ -1,21 +1,17 @@
 .options-btn {
-  /* position: absolute; */
   position: fixed;
-  top: 1vh;
-  right: 1vh;
-  padding: 1vh;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
   background-color: #6495ED;
   border-radius: 50%;
   border: none;
   cursor: pointer;
-  /* height: 8vh;
-  width: 8vh; */
   height: 50px;
   width: 50px;
   z-index: 9999;
   box-shadow: 2px 2px 4px black;
   transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
-  margin: 1vh;
 }
 
 .options-btn:active {
@@ -23,13 +19,3 @@
   box-shadow: 1px 1px 2px black;
   background-color: #ADD8E6;
 }
-
-/* @media screen and (max-width: 500px) {
-  .options-icon {
-    padding: 2vh;
-  }
-
-  .options-btn {
-    margin: 1vh;
-  }
-} */
