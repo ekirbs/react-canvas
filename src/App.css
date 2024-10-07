@@ -1,8 +1,17 @@
 .App {
-  text-align: center;
+  /* text-align: center;
 
   position: relative;
   height: 100%;
   width: 100%;
-  overflow: hidden;
+  overflow: hidden; */
+
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center;    /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  overflow: hidden; /* Prevent overflowing of the content */
 }
