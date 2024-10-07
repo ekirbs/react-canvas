@@ -1,4 +1,4 @@
-.eraseBtn {
+.erase-btn {
   position: absolute;
   bottom: 1vh;
   left: 1vh;
@@ -7,21 +7,21 @@
   border-radius: 50%;
   border: none;
   cursor: pointer;
-  height: 10vh;
-  width: 10vh;
+  height: 8vh;
+  width: 8vh;
   z-index: 9999;
   box-shadow: 2px 2px 4px black;
   transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
 }
 
-.eraseBtn:active {
+.erase-btn:active {
   transform: scale(0.9);
   box-shadow: 1px 1px 2px black;
   background-color: #ff9999;
 }
 
 @media screen and (max-width: 500px) {
-  .eraseBtn {
+  .erase-btn {
     margin: 1vh;
   }
 }

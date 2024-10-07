@@ -37,16 +37,18 @@ function OptionsPanel() {
   return (
     <>
       <div>
-        <div className="optionsPanel">
-          <div className="lineWidthContainer">
-            <h2 className="lineWidthTitle">Line Width</h2>
-            <div className="lineWidthButtons">
-              <button className="lineWidthSm" onClick={handleSmLineWidth}></button>
-              <button className="lineWidthMd" onClick={handleMdLineWidth}></button>
-              <button className="lineWidthLg" onClick={handleLgLineWidth}></button>
-              <FaInfinity className="lineWidthVar" onClick={resetToVarWidth} />
+        <div className="options-panel">
+          {/* <div className="options-panel-background"> */}
+            <div className="line-width-container">
+              <h2 className="line-width-title">Line Width</h2>
+              <div className="line-width-buttons">
+                <button className="line-width-sm" onClick={handleSmLineWidth}></button>
+                <button className="line-width-md" onClick={handleMdLineWidth}></button>
+                <button className="line-width-lg" onClick={handleLgLineWidth}></button>
+                <FaInfinity className="line-width-var" onClick={resetToVarWidth} />
+              </div>
             </div>
-          </div>
+          {/* </div> */}
         </div>
       </div>
     </>

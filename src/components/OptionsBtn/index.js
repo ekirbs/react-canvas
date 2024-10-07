@@ -12,9 +12,9 @@ function Options({ toggleOptions }) {
       <div className="button-container">
         <div className="options-icon" onClick={toggleDropdown}>
           {showDropdown ? (
-            <FaTimes className="FaTimes, optionsBtn" onClick={toggleOptions} />
+            <FaTimes className="fa-times, options-btn" onClick={toggleOptions} />
           ) : (
-            <FaBars className="Fatimes, optionsBtn" onClick={toggleOptions} />
+            <FaBars className="fa-bars, options-btn" onClick={toggleOptions} />
           )}
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaEraser } from "react-icons/fa";
-import './erasebtn.css';
+import './eraseBtn.css';
 
 function EraseBtn() {
   const clearCanvas = () => {
@@ -11,7 +11,7 @@ function EraseBtn() {
 
   return (
     <>
-      <FaEraser className="eraseBtn" onClick={clearCanvas} />
+      <FaEraser className="erase-btn" onClick={clearCanvas} />
     </>
   );
 }
