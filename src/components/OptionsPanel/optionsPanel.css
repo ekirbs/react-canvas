@@ -49,6 +49,7 @@
   box-sizing: border-box;
   flex-shrink: 0;
   display: inline-block;
+  -webkit-box-sizing: border-box; /* WebKit-specific box sizing */
 }
 
 .line-width-sm {
@@ -58,6 +59,7 @@
   min-height: 15px;
   max-width: 15px;
   max-height: 15px;
+  aspect-ratio: 1 / 1;
 }
 
 .line-width-md {
@@ -94,6 +96,7 @@
   transform: scale(0.9);
   box-shadow: 1px 1px 2px black;
   background-color: #9b9b9b;
+  -webkit-transform: scale(1); /* Prevent scaling issues */
 }
 
 .line-width-var:active {
@@ -106,6 +109,8 @@
     .line-width-sm {
       width: 15px;
       height: 15px;
+      border-radius: 50%;
+      aspect-ratio: 1 / 1;
     }
   }
 }
