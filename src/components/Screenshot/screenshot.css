@@ -20,7 +20,7 @@
   width: 100%;
 }
 
-.screenshot:active {
+.screenshot-container:active {
   transform: scale(0.9);
   box-shadow: 1px 1px 2px black;
   background-color: #FFFFCC;
