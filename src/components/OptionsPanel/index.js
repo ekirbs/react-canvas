@@ -3,6 +3,12 @@ import LineWidthControls from './LineWidthControls';
 import ColorControls from './ColorControls';
 import EffectsControls from './EffectsControls';
 import OptionsControls from './OptionsControls';
+
+import { MdOutlineLineWeight } from 'react-icons/md';
+import { IoMdColorPalette } from "react-icons/io";
+import { FaWandSparkles } from "react-icons/fa6";
+import { IoMdSettings } from "react-icons/io";
+
 import './optionsPanel.css';
 
 function OptionsPanel({ isOpen }) {
@@ -29,10 +35,19 @@ function OptionsPanel({ isOpen }) {
       <div className={`options-panel ${isOpen ? 'open' : 'closed'}`}>
         {/* Navigation bar for tabs */}
         <div className="options-panel-tabs">
-          <button className="options-panel-tab" onClick={() => setActiveTab('line-width')}>Line Width</button>
-          <button className="options-panel-tab" onClick={() => setActiveTab('color')}>Color</button>
-          <button className="options-panel-tab" onClick={() => setActiveTab('effects')}>Effects</button>
-          <button className="options-panel-tab" onClick={() => setActiveTab('options')}>Options</button>
+          {/* <button className="options-panel-tab" onClick={() => setActiveTab('line-width')}>Line Width</button> */}
+          <button className="options-panel-tab" onClick={() => setActiveTab('line-width')}>
+            <MdOutlineLineWeight className="options-panel-tab-icon"></MdOutlineLineWeight>
+          </button>
+          <button className="options-panel-tab" onClick={() => setActiveTab('color')}>
+            <IoMdColorPalette className="options-panel-tab-icon"></IoMdColorPalette>
+          </button>
+          <button className="options-panel-tab" onClick={() => setActiveTab('effects')}>
+            <FaWandSparkles className="options-panel-tab-icon"></FaWandSparkles>
+          </button>
+          <button className="options-panel-tab" onClick={() => setActiveTab('options')}>
+            <IoMdSettings className="options-panel-tab-icon"></IoMdSettings>
+          </button>
         </div>
 
         {/* Content for the active tab */}
