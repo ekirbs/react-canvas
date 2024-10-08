@@ -1,4 +1,4 @@
-.options-btn {
+.options-container {
   position: fixed;
   top: 10px;
   right: 10px;
@@ -14,11 +14,13 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
-/* .options-btn:hover {
-  background-color: #ADD8E6;
-} */
+.options {
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+}
 
-.options-btn:active {
+.options:active {
   transform: scale(0.9);
   box-shadow: 1px 1px 2px black;
   background-color: #ADD8E6;

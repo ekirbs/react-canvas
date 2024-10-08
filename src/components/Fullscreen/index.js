@@ -33,29 +33,17 @@ function Fullscreen({ toggleFullscreenCallback }) {
     }
   };
 
-  // const fullscreenActions = () => {
-  //   toggleFullscreenIcon();
-  //   toggleFullscreen();
-  // };
-
   return (
     <>
       <div className="fullscreen-container">
-        {/* <button
-          id="fullscreen"
-          className="fullscreen-icon"
-          onClick={fullscreenActions}
-        >
-          Fullscreen
-        </button> */}
         <div className="fullscreen-icon" onClick={toggleFullscreenIcon}>
           {fullscreenIcon ? (
             <MdCloseFullscreen
-              className="md-close-fullscreen, fullscreen-btn"
+              className="md-close-fullscreen, fullscreen"
               onClick={toggleFullscreen}
             />
           ) : (
-            <MdFullscreen className="md-fullscreen, fullscreen-btn" onClick={toggleFullscreen} />
+            <MdFullscreen className="md-fullscreen, fullscreen" onClick={toggleFullscreen} />
           )}
         </div>
       </div>

@@ -1,4 +1,4 @@
-.erase-btn {
+.erase-container {
   position: fixed;
   bottom: 10px;
   left: 10px;
@@ -11,7 +11,13 @@
   width: 50px;
   z-index: 9999;
   box-shadow: 2px 2px 4px black;
-  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.erase {
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
 }
 
 .erase-btn:active {
