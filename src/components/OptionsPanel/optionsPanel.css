@@ -100,6 +100,16 @@
   transform: scale(0.9);
 }
 
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance:none) {
+    /* Safari-specific adjustments */
+    .line-width-sm {
+      width: 15px;
+      height: 15px;
+    }
+  }
+}
+
 @media screen and (max-width: 900px) {
   .options-panel {
     height: 400px;
