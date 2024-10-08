@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaEraser } from "react-icons/fa";
-import './eraseBtn.css';
+import './erase.css';
 
 function EraseBtn() {
   const clearCanvas = () => {

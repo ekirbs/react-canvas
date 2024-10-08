@@ -1,8 +1,9 @@
-.screenshotBtn {
+.screenshot {
   position: fixed;
   top: 10px;
   left: 10px;
   padding: 10px;
+  margin: 10px;
   background-color: #FFD700;
   border-radius: 50%;
   border: none;
@@ -14,7 +15,7 @@
   transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
 }
 
-.screenshotBtn:active {
+.screenshot:active {
   transform: scale(0.9);
   box-shadow: 1px 1px 2px black;
   background-color: #FFFFCC;

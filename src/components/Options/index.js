@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from "react-icons/fa";
-import './optionsbtn.css';
+import './options.css';
 
 function Options({ toggleOptions }) {
   const [showDropdown, setShowDropdown] = useState(false);

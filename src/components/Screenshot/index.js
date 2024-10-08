@@ -1,8 +1,8 @@
 import React from 'react';
 import { FaCamera } from "react-icons/fa";
-import './screenshotbtn.css';
+import './screenshot.css';
 
-function ScreenshotBtn() {
+function Screenshot() {
   const takeScreenshot = () => {
     const canvas = document.getElementById('draw');
     const dataURL = canvas.toDataURL('image/png');
@@ -16,9 +16,9 @@ function ScreenshotBtn() {
 
   return (
     <>
-      <FaCamera className="screenshotBtn" onClick={takeScreenshot} />
+      <FaCamera className="screenshot" onClick={takeScreenshot} />
     </>
   );
 }
 
-export default ScreenshotBtn;
+export default Screenshot;

@@ -1,16 +1,11 @@
-// import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import { MdFullscreen, MdCloseFullscreen } from 'react-icons/md';
 import './fullscreen.css';
 
 function Fullscreen({ toggleFullscreenCallback }) {
-  // const [isMobile, setIsMobile] = useState(false);
+  const [fullscreenIcon, setFullscreenIcon] = useState(false);
 
-  // useEffect(() => {
-  //   // Check if the user is on a mobile device
-  //   const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-  //   if (/android|iPad|iPhone|iPod/i.test(userAgent)) {
-  //     setIsMobile(true); // Mark as mobile device
-  //   }
-  // }, []);
+  const toggleFullscreenIcon = () => setFullscreenIcon(!fullscreenIcon);
 
   const toggleFullscreen = () => {
     const elem = document.documentElement;
@@ -19,7 +14,11 @@ function Fullscreen({ toggleFullscreenCallback }) {
       if (elem.requestFullscreen) {
         elem.requestFullscreen();
       } else if (elem.webkitRequestFullscreen) {
+        // Safari
         elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) {
+        // IE/Edge
+        elem.msRequestFullscreen();
       }
       toggleFullscreenCallback(true);
     } else {
@@ -27,19 +26,40 @@ function Fullscreen({ toggleFullscreenCallback }) {
         document.exitFullscreen();
       } else if (document.webkitExitFullscreen) {
         document.webkitExitFullscreen();
+      } else if (document.msRequestFullscreen) {
+        document.msRequestFullscreen();
       }
       toggleFullscreenCallback(false);
     }
   };
 
+  // const fullscreenActions = () => {
+  //   toggleFullscreenIcon();
+  //   toggleFullscreen();
+  // };
+
   return (
-    <div className="Fullscreen">
-      {/* {!isMobile && ( */}
-        <button id="fullscreen" onClick={toggleFullscreen}>
+    <>
+      <div className="fullscreen-container">
+        {/* <button
+          id="fullscreen"
+          className="fullscreen-icon"
+          onClick={fullscreenActions}
+        >
           Fullscreen
-        </button>
-      {/* )} */}
-    </div>
+        </button> */}
+        <div className="fullscreen-icon" onClick={toggleFullscreenIcon}>
+          {fullscreenIcon ? (
+            <MdCloseFullscreen
+              className="md-close-fullscreen, fullscreen-btn"
+              onClick={toggleFullscreen}
+            />
+          ) : (
+            <MdFullscreen className="md-fullscreen, fullscreen-btn" onClick={toggleFullscreen} />
+          )}
+        </div>
+      </div>
+    </>
   );
 }
 
