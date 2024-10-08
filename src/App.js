@@ -17,14 +17,10 @@ function App() {
     setIsFullscreen(fullscreenStatus);
   };
 
-  // const toggleOptions = () => {
-  //   setOptionsVisible(!optionsVisible);
-  // };
   const toggleOptions = () => {
     if (optionsVisible) {
       setOptionsVisible(false);
     } else {
-      // Check fullscreen state and update optionsVisible accordingly
       const fullscreenElement = document.fullscreenElement || document.webkitFullscreenElement;
       setOptionsVisible(!fullscreenElement);
     }

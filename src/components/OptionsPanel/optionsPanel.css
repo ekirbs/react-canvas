@@ -33,6 +33,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  align-content: center;
+  flex-wrap: nowrap;
 }
 
 .line-width-sm,
@@ -46,25 +49,31 @@
   transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
   outline: none;
   -webkit-tap-highlight-color: transparent;
+
   box-sizing: border-box;
   flex-shrink: 0;
+  flex-grow: 0;
   display: inline-block;
-  -webkit-box-sizing: border-box; /* WebKit-specific box sizing */
+  -webkit-box-sizing: border-box;
 }
 
 .line-width-sm {
   width: 15px;
   height: 15px;
+
+  padding: 0;
   min-width: 15px;
   min-height: 15px;
   max-width: 15px;
   max-height: 15px;
   aspect-ratio: 1 / 1;
+  flex-basis: 15px;
 }
 
 .line-width-md {
   width: 50px;
   height: 50px;
+
   min-width: 50px;
   min-height: 50px;
   max-width: 50px;
@@ -74,6 +83,7 @@
 .line-width-lg {
   width: 100px;
   height: 100px;
+
   min-width: 100px;
   min-height: 100px;
   max-width: 100px;
@@ -96,7 +106,8 @@
   transform: scale(0.9);
   box-shadow: 1px 1px 2px black;
   background-color: #9b9b9b;
-  -webkit-transform: scale(1); /* Prevent scaling issues */
+
+  -webkit-transform: scale(1);
 }
 
 .line-width-var:active {
@@ -105,7 +116,6 @@
 
 @media not all and (min-resolution: 0.001dpcm) {
   @supports (-webkit-appearance:none) {
-    /* Safari-specific adjustments */
     .line-width-sm {
       width: 15px;
       height: 15px;

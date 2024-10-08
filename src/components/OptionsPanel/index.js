@@ -38,7 +38,6 @@ function OptionsPanel({ isOpen }) {
     <>
       <div>
         <div className={`options-panel ${isOpen ? 'open' : 'closed'}`}>
-          {/* <div className="options-panel-background"> */}
             <div className="line-width-container">
               <h2 className="line-width-title">Line Width</h2>
               <div className="line-width-buttons">
@@ -48,7 +47,6 @@ function OptionsPanel({ isOpen }) {
                 <FaInfinity className="line-width-var" onClick={resetToVarWidth} />
               </div>
             </div>
-          {/* </div> */}
         </div>
       </div>
     </>
