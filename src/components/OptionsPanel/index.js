@@ -1,55 +1,46 @@
-import React from 'react';
-import { FaInfinity } from "react-icons/fa";
+import React, { useState } from 'react';
+import LineWidthControls from './LineWidthControls';
+import ColorControls from './ColorControls';
+import EffectsControls from './EffectsControls';
+import OptionsControls from './OptionsControls';
 import './optionsPanel.css';
 
 function OptionsPanel({ isOpen }) {
 
-  const setLineWidth = (width) => {
-    const canvas = document.getElementById('draw');
-    const ctx = canvas.getContext('2d');
-    ctx.lineWidth = width;
-  };
+  const [activeTab, setActiveTab] = useState('line-width');
 
-  const resetToVarWidth = () => {
-    let direction = true;
-  
-    const canvas = document.getElementById('draw');
-    const ctx = canvas.getContext('2d');
-
-    if (ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {
-      direction = !direction;
+  const renderPanelContent = () => {
+    switch (activeTab) {
+      case 'line-width':
+        return <LineWidthControls />;
+      case 'color':
+        return <ColorControls />;
+      case 'effects':
+        return <EffectsControls />;
+      case 'options':
+        return <OptionsControls />;
+      default:
+        return <LineWidthControls />;
     }
-    ctx.lineWidth += direction ? 1 : -1;
-  };
-
-  const handleSmLineWidth = () => {
-    setLineWidth(10);
-  };
-
-  const handleMdLineWidth = () => {
-    setLineWidth(50);
-  };
-
-  const handleLgLineWidth = () => {
-    setLineWidth(100);
   };
 
   return (
-    <>
-      <div>
-        <div className={`options-panel ${isOpen ? 'open' : 'closed'}`}>
-            <div className="line-width-container">
-              <h2 className="line-width-title">Line Width</h2>
-              <div className="line-width-buttons">
-                <button className="line-width-sm" onClick={handleSmLineWidth}></button>
-                <button className="line-width-md" onClick={handleMdLineWidth}></button>
-                <button className="line-width-lg" onClick={handleLgLineWidth}></button>
-                <FaInfinity className="line-width-var" onClick={resetToVarWidth} />
-              </div>
-            </div>
+    <div>
+      <div className={`options-panel ${isOpen ? 'open' : 'closed'}`}>
+        {/* Navigation bar for tabs */}
+        <div className="options-panel-tabs">
+          <button className="options-panel-tab" onClick={() => setActiveTab('line-width')}>Line Width</button>
+          <button className="options-panel-tab" onClick={() => setActiveTab('color')}>Color</button>
+          <button className="options-panel-tab" onClick={() => setActiveTab('effects')}>Effects</button>
+          <button className="options-panel-tab" onClick={() => setActiveTab('options')}>Options</button>
+        </div>
+
+        {/* Content for the active tab */}
+        <div className="options-panel-content">
+          {renderPanelContent()}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

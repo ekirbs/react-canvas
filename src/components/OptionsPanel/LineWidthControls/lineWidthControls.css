@@ -1,0 +1,135 @@
+.line-width-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.line-width-title {
+  text-decoration: underline;
+  font-size: 25px;
+  text-align: center;
+  /* margin: 25px; */
+}
+
+.line-width-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  align-content: center;
+  flex-wrap: nowrap;
+}
+
+.line-width-sm,
+.line-width-md,
+.line-width-lg {
+  margin: 10px;
+  border-radius: 50%;
+  background-color: #CCC;
+  cursor: pointer;
+  box-shadow: 2px 2px 4px black;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+
+  box-sizing: border-box;
+  flex-shrink: 0;
+  flex-grow: 0;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+}
+
+.line-width-sm {
+  width: 15px;
+  height: 15px;
+
+  padding: 0;
+  min-width: 15px;
+  min-height: 15px;
+  max-width: 15px;
+  max-height: 15px;
+  aspect-ratio: 1 / 1;
+  flex-basis: 15px;
+}
+
+.line-width-md {
+  width: 50px;
+  height: 50px;
+
+  min-width: 50px;
+  min-height: 50px;
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.line-width-lg {
+  width: 100px;
+  height: 100px;
+
+  min-width: 100px;
+  min-height: 100px;
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.line-width-var {
+  margin: 10px;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.line-width-sm:active,
+.line-width-md:active,
+.line-width-lg:active {
+  transform: scale(0.9);
+  box-shadow: 1px 1px 2px black;
+  background-color: #9b9b9b;
+
+  -webkit-transform: scale(1);
+}
+
+.line-width-var:active {
+  transform: scale(0.9);
+}
+
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance:none) {
+    .line-width-sm {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      aspect-ratio: 1 / 1;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .line-width-buttons {
+    flex-direction: column;
+  }
+
+  .line-width-sm {
+    margin-top: 20px;
+  }
+
+  .line-width-lg {
+    margin-bottom: 0px;
+  }
+
+  .line-width-var {
+    margin: 0px;
+  }
+}
+
+@media screen and (max-height: 400px) {
+  .line-width-buttons {
+    flex-direction: row;
+  }
+}
