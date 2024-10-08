@@ -6,28 +6,10 @@ function Canvas({ resizeOnFullscreen }) {
     const canvas = document.querySelector('#draw');
     const ctx = canvas.getContext('2d');
 
-    // // || canvas resize on fullscreen toggle
-    // const resizeCanvas = () => {
-    //   if (resizeOnFullscreen) {
-    //     canvas.width = window.innerWidth;
-    //     canvas.height = window.innerHeight;
-    //   }
-    // };
-
-    // canvas.width = window.innerWidth;
-    // canvas.height = window.innerHeight;
-
-    // ctx.strokeStyle = '#BADA55';
-    // ctx.lineJoin = 'round';
-    // ctx.lineCap = 'round';
-    // ctx.lineWidth = 50;
-    // ctx.globalCompositeOperation = 'lighten';
-
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
 
-      // Reinitialize the drawing context settings after resize
       ctx.strokeStyle = '#BADA55';
       ctx.lineJoin = 'round';
       ctx.lineCap = 'round';
@@ -76,17 +58,6 @@ function Canvas({ resizeOnFullscreen }) {
       [lastX, lastY] = [e.offsetX, e.offsetY];
     };
 
-    // const mouseMoveHandler = (e) => {
-    //   draw(e);
-    // };
-
-    // const mouseUpHandler = () => {
-    //   isDrawing = false;
-    // };
-
-    // const mouseOutHandler = () => {
-    //   isDrawing = false;
-    // };
     const mouseMoveHandler = (e) => draw(e);
     const mouseUpHandler = () => (isDrawing = false);
     const mouseOutHandler = () => (isDrawing = false);
@@ -106,9 +77,6 @@ function Canvas({ resizeOnFullscreen }) {
       e.preventDefault();
     };
 
-    // const touchEndHandler = () => {
-    //   isDrawing = false;
-    // };
     const touchEndHandler = () => (isDrawing = false);
 
     // || event listeners
