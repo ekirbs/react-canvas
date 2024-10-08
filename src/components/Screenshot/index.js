@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaCamera } from "react-icons/fa";
+import { FaCamera } from 'react-icons/fa';
 import './screenshot.css';
 
 function Screenshot() {
@@ -16,7 +16,9 @@ function Screenshot() {
 
   return (
     <>
-      <FaCamera className="screenshot" onClick={takeScreenshot} />
+      <div className="screenshot-container">
+        <FaCamera className="screenshot" onClick={takeScreenshot} />
+      </div>
     </>
   );
 }
