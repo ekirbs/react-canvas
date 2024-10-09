@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { FaBars, FaTimes } from "react-icons/fa";
+
+import { FaBars, FaTimes } from 'react-icons/fa';
+
 import './options.css';
 
 function Options({ toggleOptions }) {

@@ -11,7 +11,6 @@
   text-decoration: underline;
   font-size: 25px;
   text-align: center;
-  /* margin: 25px; */
 }
 
 .line-width-buttons {
@@ -28,7 +27,7 @@
 .line-width-lg {
   margin: 10px;
   border-radius: 50%;
-  background-color: #CCC;
+  background-color: #ccc;
   cursor: pointer;
   box-shadow: 2px 2px 4px black;
   transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
@@ -100,7 +99,7 @@
 }
 
 @media not all and (min-resolution: 0.001dpcm) {
-  @supports (-webkit-appearance:none) {
+  @supports (-webkit-appearance: none) {
     .line-width-sm {
       width: 15px;
       height: 15px;
@@ -110,7 +109,7 @@
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 900px) and (min-height: 500px) {
   .line-width-buttons {
     flex-direction: column;
   }
@@ -125,11 +124,5 @@
 
   .line-width-var {
     margin: 0px;
-  }
-}
-
-@media screen and (max-height: 400px) {
-  .line-width-buttons {
-    flex-direction: row;
   }
 }

@@ -1,12 +1,11 @@
 @import './css/reset-normalize.css';
 
 .App {
-  
   position: relative;
   height: 100%;
   width: 100%;
   overflow: hidden;
-  
+
   /* text-align: center;
 
   display: flex;

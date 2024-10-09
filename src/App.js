@@ -6,8 +6,8 @@ import {
   Options,
   OptionsPanel,
   Erase,
-  Screenshot
-} from "./components";
+  Screenshot,
+} from './components';
 
 function App() {
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -21,7 +21,8 @@ function App() {
     if (optionsVisible) {
       setOptionsVisible(false);
     } else {
-      const fullscreenElement = document.fullscreenElement || document.webkitFullscreenElement;
+      const fullscreenElement =
+        document.fullscreenElement || document.webkitFullscreenElement;
       setOptionsVisible(!fullscreenElement);
     }
   };

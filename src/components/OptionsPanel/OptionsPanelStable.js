@@ -1,9 +1,10 @@
 import React from 'react';
-import { FaInfinity } from "react-icons/fa";
+
+import { FaInfinity } from 'react-icons/fa';
+
 import './optionsPanel.css';
 
 function OptionsPanel({ isOpen }) {
-
   const setLineWidth = (width) => {
     const canvas = document.getElementById('draw');
     const ctx = canvas.getContext('2d');
@@ -12,7 +13,7 @@ function OptionsPanel({ isOpen }) {
 
   const resetToVarWidth = () => {
     let direction = true;
-  
+
     const canvas = document.getElementById('draw');
     const ctx = canvas.getContext('2d');
 
@@ -38,15 +39,27 @@ function OptionsPanel({ isOpen }) {
     <>
       <div>
         <div className={`options-panel ${isOpen ? 'open' : 'closed'}`}>
-            <div className="line-width-container">
-              <h2 className="line-width-title">Line Width</h2>
-              <div className="line-width-buttons">
-                <button className="line-width-sm" onClick={handleSmLineWidth}></button>
-                <button className="line-width-md" onClick={handleMdLineWidth}></button>
-                <button className="line-width-lg" onClick={handleLgLineWidth}></button>
-                <FaInfinity className="line-width-var" onClick={resetToVarWidth} />
-              </div>
+          <div className="line-width-container">
+            <h2 className="line-width-title">Line Width</h2>
+            <div className="line-width-buttons">
+              <button
+                className="line-width-sm"
+                onClick={handleSmLineWidth}
+              ></button>
+              <button
+                className="line-width-md"
+                onClick={handleMdLineWidth}
+              ></button>
+              <button
+                className="line-width-lg"
+                onClick={handleLgLineWidth}
+              ></button>
+              <FaInfinity
+                className="line-width-var"
+                onClick={resetToVarWidth}
+              />
             </div>
+          </div>
         </div>
       </div>
     </>

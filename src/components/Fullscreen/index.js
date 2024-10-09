@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+
 import { MdFullscreen, MdCloseFullscreen } from 'react-icons/md';
+
 import './fullscreen.css';
 
 function Fullscreen({ toggleFullscreenCallback }) {
@@ -43,7 +45,10 @@ function Fullscreen({ toggleFullscreenCallback }) {
               onClick={toggleFullscreen}
             />
           ) : (
-            <MdFullscreen className="md-fullscreen, fullscreen" onClick={toggleFullscreen} />
+            <MdFullscreen
+              className="md-fullscreen, fullscreen"
+              onClick={toggleFullscreen}
+            />
           )}
         </div>
       </div>
