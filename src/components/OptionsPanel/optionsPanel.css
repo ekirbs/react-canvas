@@ -3,14 +3,17 @@
   bottom: 1vh;
   right: 1vh;
   border: 2px solid black;
-  border-radius: 11px 11px 10px 10px;
+  border-radius: 10px;
   width: 400px;
   height: 210px;
   z-index: 9999;
   box-shadow: 2px 2px 4px black;
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
 }
 
 .options-panel-tabs {
@@ -20,8 +23,11 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border-radius: 10px 10px 0 0;
+  border-radius: 8px 8px 0 0;
   overflow: hidden;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
 }
 
 .options-panel-tab {
@@ -33,6 +39,7 @@
   align-items: center;
   justify-content: center;
   border: none;
+  outline: none;
   cursor: pointer;
   background-color: #f0f0f0;
   transition: background-color 0.3s ease;
@@ -56,6 +63,10 @@
   background-color: #bca0dc;
 }
 
+.shapes {
+  background-color: #52307c
+}
+
 .color {
   background-color: #b491c8;
 }
@@ -76,16 +87,9 @@
   padding: 10px;
 }
 
-@media screen and (max-width: 900px) and (min-height: 500px) {
+@media screen and (max-width: 800px) and (min-height: 500px) {
   .options-panel {
     height: 400px;
-    width: 200px;
-  }
-}
-
-@media screen and (max-width: 900px) and (max-height: 499px) {
-  .options-panel {
-    height: 210px;
-    width: 340px;
+    width: 210px;
   }
 }

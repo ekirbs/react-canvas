@@ -4,54 +4,36 @@ import { FaInfinity } from 'react-icons/fa';
 
 import './lineWidthControls.css';
 
-function LineWidthControls() {
-  const setLineWidth = (width) => {
-    const canvas = document.getElementById('draw');
-    const ctx = canvas.getContext('2d');
-    ctx.lineWidth = width;
+function LineWidthControls({ setLineWidth, setIsVariable, lineWidth, isVariable }) {
+  const handleFixedWidth = (width) => {
+    setIsVariable(false);
+    setLineWidth(width);
   };
 
-  const resetToVarWidth = () => {
-    let direction = true;
-
-    const canvas = document.getElementById('draw');
-    const ctx = canvas.getContext('2d');
-
-    if (ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {
-      direction = !direction;
-    }
-    ctx.lineWidth += direction ? 1 : -1;
+  const handleVariableWidth = () => {
+    setIsVariable(true);
   };
-
-  // const handleSmLineWidth = () => {
-  //   setLineWidth(10);
-  // };
-
-  // const handleMdLineWidth = () => {
-  //   setLineWidth(50);
-  // };
-
-  // const handleLgLineWidth = () => {
-  //   setLineWidth(100);
-  // };
 
   return (
     <div className="line-width-container">
       <h2 className="line-width-title">Line Width</h2>
       <div className="line-width-buttons">
         <button
+          onClick={() => handleFixedWidth(10)}
           className="line-width-sm"
-          onClick={() => setLineWidth(10)}
         ></button>
         <button
+          onClick={() => handleFixedWidth(50)}
           className="line-width-md"
-          onClick={() => setLineWidth(50)}
         ></button>
         <button
+          onClick={() => handleFixedWidth(100)}
           className="line-width-lg"
-          onClick={() => setLineWidth(100)}
         ></button>
-        <FaInfinity className="line-width-var" onClick={resetToVarWidth} />
+        <FaInfinity
+          className="line-width-var"
+          onClick={handleVariableWidth}
+        />
       </div>
     </div>
   );

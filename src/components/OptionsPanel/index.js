@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import LineWidthControls from './LineWidthControls';
+import ShapesControls from './ShapesControls';
 import ColorControls from './ColorControls';
 import EffectsControls from './EffectsControls';
 import OptionsControls from './OptionsControls';
@@ -8,16 +9,32 @@ import { MdOutlineLineWeight } from 'react-icons/md';
 import { IoMdColorPalette } from 'react-icons/io';
 import { FaWandSparkles } from 'react-icons/fa6';
 import { IoMdSettings } from 'react-icons/io';
+import { FaStar } from 'react-icons/fa';
 
 import './optionsPanel.css';
 
-function OptionsPanel({ isOpen }) {
+function OptionsPanel({
+  isOpen,
+  lineWidth,
+  setLineWidth,
+  isVariable,
+  setIsVariable,
+}) {
   const [activeTab, setActiveTab] = useState('line-width');
 
   const renderPanelContent = () => {
     switch (activeTab) {
       case 'line-width':
-        return <LineWidthControls />;
+        return (
+          <LineWidthControls
+            setLineWidth={setLineWidth}
+            setIsVariable={setIsVariable}
+            lineWidth={lineWidth}
+            isVariable={isVariable}
+          />
+        );
+      case 'shapes':
+        return <ShapesControls />;
       case 'color':
         return <ColorControls />;
       case 'effects':
@@ -38,6 +55,12 @@ function OptionsPanel({ isOpen }) {
             onClick={() => setActiveTab('line-width')}
           >
             <MdOutlineLineWeight className="options-panel-tab-icon"></MdOutlineLineWeight>
+          </button>
+          <button
+            className="options-panel-tab shapes"
+            onClick={() => setActiveTab('shapes')}
+          >
+            <FaStar className="options-panel-tab-icon"></FaStar>
           </button>
           <button
             className="options-panel-tab color"

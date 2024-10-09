@@ -13,6 +13,9 @@ function App() {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [optionsVisible, setOptionsVisible] = useState(false);
 
+  const [lineWidth, setLineWidth] = useState(10); // Manage line width in App
+  const [isVariable, setIsVariable] = useState(true); // Manage variable mode in App
+
   const toggleFullscreen = (fullscreenStatus) => {
     setIsFullscreen(fullscreenStatus);
   };
@@ -30,11 +33,20 @@ function App() {
   return (
     <div className="App">
       <Fullscreen toggleFullscreenCallback={toggleFullscreen} />
-      <Canvas resizeOnFullscreen={isFullscreen} />
+      <Canvas
+        resizeOnFullscreen={isFullscreen}
+        lineWidth={lineWidth}
+        isVariable={isVariable}
+      />
       <Options toggleOptions={toggleOptions} />
       {optionsVisible && (
         <>
-          <OptionsPanel />
+          <OptionsPanel
+            lineWidth={lineWidth}
+            setLineWidth={setLineWidth}
+            isVariable={isVariable}
+            setIsVariable={setIsVariable}
+          />
           <Erase />
           <Screenshot />
         </>

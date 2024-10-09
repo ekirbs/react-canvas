@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './canvas.css';
 
-function Canvas({ resizeOnFullscreen, lineWidth, isVariable }) {
+function Canvas({ resizeOnFullscreen }) {
   useEffect(() => {
     const canvas = document.querySelector('#draw');
     const ctx = canvas.getContext('2d');
@@ -23,8 +23,7 @@ function Canvas({ resizeOnFullscreen, lineWidth, isVariable }) {
     let lastX = 0;
     let lastY = 0;
     let hue = 0;
-    // let direction = true;
-    const directionRef = { current: true };
+    let direction = true;
 
     function draw(e) {
       if (!isDrawing) return;
@@ -47,20 +46,11 @@ function Canvas({ resizeOnFullscreen, lineWidth, isVariable }) {
       [lastX, lastY] = [mouseX, mouseY];
       hue = (hue + 1) % 360;
 
-    //   if (ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {
-    //     direction = !direction;
-    //   }
-    //   ctx.lineWidth += direction ? 1 : -1;
-    // }
-    if (isVariable) {
       if (ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {
-        directionRef.current = !directionRef.current;
+        direction = !direction;
       }
-      ctx.lineWidth += directionRef.current ? 1 : -1;
-    } else {
-      ctx.lineWidth = lineWidth;
+      ctx.lineWidth += direction ? 1 : -1;
     }
-  }
 
     // || mouse events
     const mouseDownHandler = (e) => {
@@ -119,7 +109,7 @@ function Canvas({ resizeOnFullscreen, lineWidth, isVariable }) {
       canvas.removeEventListener('touchmove', touchMoveHandler);
       canvas.removeEventListener('touchend', touchEndHandler);
     };
-  }, [resizeOnFullscreen, lineWidth, isVariable]);
+  }, [resizeOnFullscreen]);
 
   return <canvas id="draw"></canvas>;
 }
