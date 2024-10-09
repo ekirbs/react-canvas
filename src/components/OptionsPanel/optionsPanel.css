@@ -10,7 +10,6 @@
   box-shadow: 2px 2px 4px black;
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
   flex-direction: column;
 }
 
@@ -27,7 +26,6 @@
 
 .options-panel-tab {
   height: 100%;
-  /* width: 100px; */
 
   flex-grow: 1;
   text-align: center;
@@ -48,13 +46,25 @@
   background-color: #e0e0e0;
 }
 
-.options-panel-tab:active {
-  background-color: lightgreen;
+.options-panel-tab-icon {
+  height: 30px;
+  width: 30px;
 }
 
-.options-panel-tab-icon {
-  height: 25px;
-  width: 25px;
+.line-width {
+  background-color: #bca0dc;
+}
+
+.color {
+  background-color: #b491c8;
+}
+
+.effects {
+  background-color: #7c5295;
+}
+
+.settings {
+  background-color: #663a82;
 }
 
 .options-panel-content {

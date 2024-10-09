@@ -36,16 +36,16 @@ function OptionsPanel({ isOpen }) {
         {/* Navigation bar for tabs */}
         <div className="options-panel-tabs">
           {/* <button className="options-panel-tab" onClick={() => setActiveTab('line-width')}>Line Width</button> */}
-          <button className="options-panel-tab" onClick={() => setActiveTab('line-width')}>
+          <button className="options-panel-tab line-width" onClick={() => setActiveTab('line-width')}>
             <MdOutlineLineWeight className="options-panel-tab-icon"></MdOutlineLineWeight>
           </button>
-          <button className="options-panel-tab" onClick={() => setActiveTab('color')}>
+          <button className="options-panel-tab color" onClick={() => setActiveTab('color')}>
             <IoMdColorPalette className="options-panel-tab-icon"></IoMdColorPalette>
           </button>
-          <button className="options-panel-tab" onClick={() => setActiveTab('effects')}>
+          <button className="options-panel-tab effects" onClick={() => setActiveTab('effects')}>
             <FaWandSparkles className="options-panel-tab-icon"></FaWandSparkles>
           </button>
-          <button className="options-panel-tab" onClick={() => setActiveTab('options')}>
+          <button className="options-panel-tab settings" onClick={() => setActiveTab('options')}>
             <IoMdSettings className="options-panel-tab-icon"></IoMdSettings>
           </button>
         </div>
