@@ -42,7 +42,14 @@ function OptionsPanel({
       case 'options':
         return <OptionsControls />;
       default:
-        return <LineWidthControls />;
+        return (
+          <LineWidthControls
+            setLineWidth={setLineWidth}
+            setIsVariable={setIsVariable}
+            lineWidth={lineWidth}
+            isVariable={isVariable}
+          />
+        );
     }
   };
 

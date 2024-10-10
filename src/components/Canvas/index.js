@@ -1,9 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './canvas.css';
 
-function Canvas({ resizeOnFullscreen, lineWidth, isVariable }) {
+const Canvas = React.memo(({ resizeOnFullscreen, lineWidth, isVariable }) => {
+  const canvasRef = useRef(null);
+
   useEffect(() => {
-    const canvas = document.querySelector('#draw');
+    // const canvas = document.querySelector('#draw');
+    const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
 
     const resizeCanvas = () => {
@@ -13,8 +16,10 @@ function Canvas({ resizeOnFullscreen, lineWidth, isVariable }) {
       ctx.strokeStyle = '#BADA55';
       ctx.lineJoin = 'round';
       ctx.lineCap = 'round';
-      ctx.lineWidth = 50;
+      // ctx.lineWidth = 50;
+      // ctx.lineWidth = lineWidth;
       ctx.globalCompositeOperation = 'lighten';
+      console.log('Canvas rendered');
     };
 
     resizeCanvas();
@@ -119,9 +124,19 @@ function Canvas({ resizeOnFullscreen, lineWidth, isVariable }) {
       canvas.removeEventListener('touchmove', touchMoveHandler);
       canvas.removeEventListener('touchend', touchEndHandler);
     };
-  }, [resizeOnFullscreen, lineWidth, isVariable]);
+  }, [resizeOnFullscreen, isVariable, lineWidth]);
 
-  return <canvas id="draw"></canvas>;
-}
+  useEffect(() => {
+    const canvas = document.querySelector('#draw');
+    const ctx = canvas.getContext('2d');
+
+    // Update only the lineWidth when the state changes
+    ctx.lineWidth = lineWidth;
+
+    console.log('Line width updated:', lineWidth);
+  }, [lineWidth]);
+
+  return <canvas id="draw" ref={canvasRef}></canvas>;
+});
 
 export default Canvas;

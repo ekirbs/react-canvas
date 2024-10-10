@@ -13,8 +13,8 @@ function App() {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [optionsVisible, setOptionsVisible] = useState(false);
 
-  const [lineWidth, setLineWidth] = useState(10); // Manage line width in App
-  const [isVariable, setIsVariable] = useState(true); // Manage variable mode in App
+  const [lineWidth, setLineWidth] = useState(10); 
+  const [isVariable, setIsVariable] = useState(true);
 
   const toggleFullscreen = (fullscreenStatus) => {
     setIsFullscreen(fullscreenStatus);
@@ -37,6 +37,7 @@ function App() {
         resizeOnFullscreen={isFullscreen}
         lineWidth={lineWidth}
         isVariable={isVariable}
+        setLineWidth={setLineWidth}
       />
       <Options toggleOptions={toggleOptions} />
       {optionsVisible && (

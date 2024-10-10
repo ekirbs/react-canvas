@@ -8,6 +8,7 @@ function LineWidthControls({ setLineWidth, setIsVariable, lineWidth, isVariable 
   const handleFixedWidth = (width) => {
     setIsVariable(false);
     setLineWidth(width);
+    console.log("handleFixedWidth, isVariable(false), setLineWidth: ", width)
   };
 
   const handleVariableWidth = () => {
@@ -19,20 +20,36 @@ function LineWidthControls({ setLineWidth, setIsVariable, lineWidth, isVariable 
       <h2 className="line-width-title">Line Width</h2>
       <div className="line-width-buttons">
         <button
-          onClick={() => handleFixedWidth(10)}
+          onClick={(e) => {
+            e.preventDefault();
+            handleFixedWidth(10)
+          }}
           className="line-width-sm"
+          type="button"
         ></button>
         <button
-          onClick={() => handleFixedWidth(50)}
+          onClick={(e) => {
+            e.preventDefault();
+            handleFixedWidth(50)
+          }}
           className="line-width-md"
+          type="button"
         ></button>
         <button
-          onClick={() => handleFixedWidth(100)}
+          onClick={(e) => {
+            e.preventDefault();
+            handleFixedWidth(100)
+          }}
           className="line-width-lg"
+          type="button"
         ></button>
         <FaInfinity
           className="line-width-var"
-          onClick={handleVariableWidth}
+          type="button"
+          onClick={(e) => {
+            e.preventDefault();
+            handleVariableWidth();
+          }}
         />
       </div>
     </div>
