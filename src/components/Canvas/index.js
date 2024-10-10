@@ -5,7 +5,6 @@ const Canvas = React.memo(({ resizeOnFullscreen, lineWidth, isVariable }) => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
-    // const canvas = document.querySelector('#draw');
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
 
@@ -16,13 +15,32 @@ const Canvas = React.memo(({ resizeOnFullscreen, lineWidth, isVariable }) => {
       ctx.strokeStyle = '#BADA55';
       ctx.lineJoin = 'round';
       ctx.lineCap = 'round';
-      // ctx.lineWidth = 50;
+      ctx.lineWidth = 50;
       // ctx.lineWidth = lineWidth;
       ctx.globalCompositeOperation = 'lighten';
       console.log('Canvas rendered');
     };
 
     resizeCanvas();
+
+    // || event listeners
+    document.addEventListener('fullscreenchange', resizeCanvas);
+    document.addEventListener('webkitfullscreenchange', resizeCanvas);
+    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener('orientationchange', resizeCanvas);
+
+    return () => {
+      document.removeEventListener('fullscreenchange', resizeCanvas);
+      document.removeEventListener('webkitfullscreenchange', resizeCanvas);
+      window.removeEventListener('resize', resizeCanvas);
+      window.removeEventListener('orientationchange', resizeCanvas);
+    };
+  }, [resizeOnFullscreen]);
+
+  useEffect(() => {
+    // const canvas = document.querySelector('#draw');
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
 
     let isDrawing = false;
     let lastX = 0;
@@ -52,20 +70,20 @@ const Canvas = React.memo(({ resizeOnFullscreen, lineWidth, isVariable }) => {
       [lastX, lastY] = [mouseX, mouseY];
       hue = (hue + 1) % 360;
 
-    //   if (ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {
-    //     direction = !direction;
-    //   }
-    //   ctx.lineWidth += direction ? 1 : -1;
-    // }
-    if (isVariable) {
-      if (ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {
-        directionRef.current = !directionRef.current;
+      //   if (ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {
+      //     direction = !direction;
+      //   }
+      //   ctx.lineWidth += direction ? 1 : -1;
+      // }
+      if (isVariable) {
+        if (ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {
+          directionRef.current = !directionRef.current;
+        }
+        ctx.lineWidth += directionRef.current ? 1 : -1;
+      } else {
+        ctx.lineWidth = lineWidth;
       }
-      ctx.lineWidth += directionRef.current ? 1 : -1;
-    } else {
-      ctx.lineWidth = lineWidth;
     }
-  }
 
     // || mouse events
     const mouseDownHandler = (e) => {
@@ -95,10 +113,10 @@ const Canvas = React.memo(({ resizeOnFullscreen, lineWidth, isVariable }) => {
     const touchEndHandler = () => (isDrawing = false);
 
     // || event listeners
-    document.addEventListener('fullscreenchange', resizeCanvas);
-    document.addEventListener('webkitfullscreenchange', resizeCanvas);
-    window.addEventListener('resize', resizeCanvas);
-    window.addEventListener('orientationchange', resizeCanvas);
+    // document.addEventListener('fullscreenchange', resizeCanvas);
+    // document.addEventListener('webkitfullscreenchange', resizeCanvas);
+    // window.addEventListener('resize', resizeCanvas);
+    // window.addEventListener('orientationchange', resizeCanvas);
 
     canvas.addEventListener('mousedown', mouseDownHandler);
     canvas.addEventListener('mousemove', mouseMoveHandler);
@@ -110,10 +128,10 @@ const Canvas = React.memo(({ resizeOnFullscreen, lineWidth, isVariable }) => {
     canvas.addEventListener('touchend', touchEndHandler);
 
     return () => {
-      document.removeEventListener('fullscreenchange', resizeCanvas);
-      document.removeEventListener('webkitfullscreenchange', resizeCanvas);
-      window.removeEventListener('resize', resizeCanvas);
-      window.removeEventListener('orientationchange', resizeCanvas);
+      // document.removeEventListener('fullscreenchange', resizeCanvas);
+      // document.removeEventListener('webkitfullscreenchange', resizeCanvas);
+      // window.removeEventListener('resize', resizeCanvas);
+      // window.removeEventListener('orientationchange', resizeCanvas);
 
       canvas.removeEventListener('mousedown', mouseDownHandler);
       canvas.removeEventListener('mousemove', mouseMoveHandler);
@@ -124,13 +142,12 @@ const Canvas = React.memo(({ resizeOnFullscreen, lineWidth, isVariable }) => {
       canvas.removeEventListener('touchmove', touchMoveHandler);
       canvas.removeEventListener('touchend', touchEndHandler);
     };
-  }, [resizeOnFullscreen, isVariable, lineWidth]);
+  }, [isVariable, lineWidth]);
 
   useEffect(() => {
     const canvas = document.querySelector('#draw');
     const ctx = canvas.getContext('2d');
 
-    // Update only the lineWidth when the state changes
     ctx.lineWidth = lineWidth;
 
     console.log('Line width updated:', lineWidth);
