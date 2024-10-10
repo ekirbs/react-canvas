@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/react-canvas/static/css/main.09402bb4.css",
+    "main.css": "/react-canvas/static/css/main.c825e5db.css",
     "main.js": "/react-canvas/static/js/main.abed9b34.js",
     "index.html": "/react-canvas/index.html",
-    "main.09402bb4.css.map": "/react-canvas/static/css/main.09402bb4.css.map",
+    "main.c825e5db.css.map": "/react-canvas/static/css/main.c825e5db.css.map",
     "main.abed9b34.js.map": "/react-canvas/static/js/main.abed9b34.js.map"
   },
   "entrypoints": [
-    "static/css/main.09402bb4.css",
+    "static/css/main.c825e5db.css",
     "static/js/main.abed9b34.js"
   ]
 }
