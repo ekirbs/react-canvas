@@ -1,4 +1,4 @@
-.line-width-container {
+.line-width-controls-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,7 +7,7 @@
   width: 100%;
 }
 
-.line-width-title {
+.line-width-controls-title {
   text-decoration: underline;
   font-size: 25px;
   text-align: center;

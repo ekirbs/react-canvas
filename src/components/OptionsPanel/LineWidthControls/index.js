@@ -16,8 +16,8 @@ function LineWidthControls({ setLineWidth, setIsVariable, lineWidth, isVariable 
   };
 
   return (
-    <div className="line-width-container">
-      <h2 className="line-width-title">Line Width</h2>
+    <div className="line-width-controls-container">
+      <h2 className="line-width-controls-title">Line Width</h2>
       <div className="line-width-buttons">
         <button
           onClick={(e) => {

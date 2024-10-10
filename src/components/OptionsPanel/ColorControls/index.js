@@ -1,24 +1,34 @@
-import React from 'react';
-// import { FaInfinity } from "react-icons/fa";
+import React, { useState } from 'react';
+import { GithubPicker } from 'react-color';
+
 import './colorControls.css';
 
 function ColorControls() {
-  const setColors = (effect) => {
-    const canvas = document.getElementById('draw');
-    const ctx = canvas.getContext('2d');
-    ctx.effect = effect;
-  };
+  const [color, setColor] = useState('#FFFFFF');
 
+  // function handleColorChange(e) {
+  //   setColor(e.target.value);
+  // };
+  const handleColorChange = (color) => {
+    setColor(color.hex);
+  }
+  
   return (
-    <div className="colors-controls-container">
-      <h2 className="colors-controls-title">Colors</h2>
-      <div className="colors-controls-buttons">
-        {/* <button className="colors-sm" onClick={() => setcolors(10)}></button> */}
-        <button className="colors-controls-md" onClick={() => setColors(50)}></button>
-        {/* <button className="colors-lg" onClick={() => setcolors(100)}></button>
-        <FaInfinity className="colors-var" onClick={resetTocolors} /> */}
+    <>
+      <div className="color-controls-container">
+        <h2 className="color-controls-title">Color Picker</h2>
+        <div className="color-controls-content">
+          <div className="color-display" style={{ backgroundColor: color }}>
+            <p>Selected Color: {color}</p>
+          </div>
+          <div className="color-picker">
+            <label>Select A Color</label>
+            {/* <input type="color" value={color} onChange={handleColorChange} /> */}
+            <GithubPicker color={color} onChange={handleColorChange} className="github-picker" />
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
