@@ -16,6 +16,9 @@ function App() {
   const [lineWidth, setLineWidth] = useState(10); 
   const [isVariable, setIsVariable] = useState(true);
 
+  const [color, setColor] = useState('#FFFFFF');
+  const [isRainbow, setIsRainbow] = useState(true);
+
   const toggleFullscreen = (fullscreenStatus) => {
     setIsFullscreen(fullscreenStatus);
   };
@@ -38,6 +41,8 @@ function App() {
         lineWidth={lineWidth}
         isVariable={isVariable}
         setLineWidth={setLineWidth}
+        color={color}
+        isRainbow={isRainbow}
       />
       <Options toggleOptions={toggleOptions} />
       {optionsVisible && (
@@ -47,6 +52,10 @@ function App() {
             setLineWidth={setLineWidth}
             isVariable={isVariable}
             setIsVariable={setIsVariable}
+            color={color}
+            setColor={setColor}
+            isRainbow={isRainbow}
+            setIsRainbow={setIsRainbow}
           />
           <Erase />
           <Screenshot />

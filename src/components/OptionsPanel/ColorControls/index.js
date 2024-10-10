@@ -1,17 +1,22 @@
 import React, { useState } from 'react';
 import { GithubPicker } from 'react-color';
+import { FaRainbow } from 'react-icons/fa';
 
 import './colorControls.css';
 
-function ColorControls() {
-  const [color, setColor] = useState('#FFFFFF');
+function ColorControls({ color, setColor, isRainbow, setIsRainbow }) {
+  // const [color, setColor] = useState('#FFFFFF');
 
-  // function handleColorChange(e) {
-  //   setColor(e.target.value);
-  // };
   const handleColorChange = (color) => {
     setColor(color.hex);
-  }
+    setIsRainbow(false);
+    console.log("handleColorChange. setIsRainbow(false), setColor: ", color.hex);
+  };
+
+  const handleRainbowColor = () => {
+    setIsRainbow(true);
+    console.log("handleRainbowColor. setIsRainbow(true)");
+  };
   
   return (
     <>
@@ -23,8 +28,17 @@ function ColorControls() {
           </div>
           <div className="color-picker">
             <label>Select A Color</label>
-            {/* <input type="color" value={color} onChange={handleColorChange} /> */}
             <GithubPicker color={color} onChange={handleColorChange} className="github-picker" />
+          </div>
+          <div className="rainbow-color">
+            <FaRainbow
+              className="rainbow-icon"
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                handleRainbowColor();
+              }}
+            />
           </div>
         </div>
       </div>

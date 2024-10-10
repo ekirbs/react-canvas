@@ -20,6 +20,10 @@ function OptionsPanel({
   setLineWidth,
   isVariable,
   setIsVariable,
+  color,
+  setColor,
+  isRainbow,
+  setIsRainbow,
 }) {
   const [activeTab, setActiveTab] = useState('line-width');
 
@@ -28,16 +32,21 @@ function OptionsPanel({
       case 'line-width':
         return (
           <LineWidthControls
-            setLineWidth={setLineWidth}
-            setIsVariable={setIsVariable}
             lineWidth={lineWidth}
+            setLineWidth={setLineWidth}
             isVariable={isVariable}
+            setIsVariable={setIsVariable}
           />
         );
       case 'shapes':
         return <ShapesControls />;
       case 'color':
-        return <ColorControls />;
+        return <ColorControls
+          color={color}
+          setColor={setColor}
+          isRainbow={isRainbow}
+          setIsRainbow={setIsRainbow}
+        />;
       case 'effects':
         return <EffectsControls />;
       case 'options':
@@ -45,10 +54,10 @@ function OptionsPanel({
       default:
         return (
           <LineWidthControls
-            setLineWidth={setLineWidth}
-            setIsVariable={setIsVariable}
             lineWidth={lineWidth}
+            setLineWidth={setLineWidth}
             isVariable={isVariable}
+            setIsVariable={setIsVariable}
           />
         );
     }
