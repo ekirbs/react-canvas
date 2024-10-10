@@ -12,7 +12,7 @@ const Canvas = React.memo(({ resizeOnFullscreen, lineWidth, isVariable, color, i
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
 
-      ctx.strokeStyle = '#BADA55';
+      ctx.strokeStyle = '#100932'; // || 'LOOPER'
       ctx.lineJoin = 'round';
       ctx.lineCap = 'round';
       ctx.lineWidth = 50;

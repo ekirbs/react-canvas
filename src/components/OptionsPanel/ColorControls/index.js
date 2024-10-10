@@ -27,7 +27,7 @@ function ColorControls({ color, setColor, isRainbow, setIsRainbow }) {
             <p>Selected Color: {color}</p>
           </div>
           <div className="color-picker">
-            <label>Select A Color</label>
+            {/* <label>Select A Color</label> */}
             <GithubPicker color={color} onChange={handleColorChange} className="github-picker" />
           </div>
           <div className="rainbow-color">

@@ -11,7 +11,11 @@
   text-decoration: underline;
   font-size: 25px;
   text-align: center;
+  /* background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
 }
+
 
 .color-controls-content {
   height: 100%;
@@ -51,6 +55,35 @@
 
 .github-picker {
   border-radius: 10px;
+}
+
+.rainbow-color {
+  height: 50px;
+  width: 50px;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+  background-clip: text;
+  -webkit-background-clip: text; */
+}
+
+.rainbow-icon  {
+  height: 30px;
+  width: 30px;
+  animation: rainbow 5s linear infinite;
+}
+
+@keyframes rainbow {
+  0% { color: red; }
+  16.6% { color: orange; }
+  33.3% { color: yellow; }
+  50% { color: green; }
+  66.6% { color: blue; }
+  83.3% { color: purple; }
+  100% { color: red; }
 }
 
 @media screen and (max-width: 800px) and (min-height: 500px) {
