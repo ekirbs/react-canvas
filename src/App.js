@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import music from './assets/audio/music.mp3';
 import {
   Canvas,
   Fullscreen,
@@ -8,6 +8,7 @@ import {
   Erase,
   Screenshot,
 } from './components';
+import './App.css';
 
 function App() {
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -18,6 +19,10 @@ function App() {
 
   const [color, setColor] = useState('#FFFFFF');
   const [isRainbow, setIsRainbow] = useState(true);
+
+  const [isMusicPlaying, setIsMusicPlaying] = useState(false);
+  const [audio] = useState(new Audio(music));
+
 
   const toggleFullscreen = (fullscreenStatus) => {
     setIsFullscreen(fullscreenStatus);
@@ -33,14 +38,28 @@ function App() {
     }
   };
 
+  const toggleMusic = () => {
+    setIsMusicPlaying(!isMusicPlaying);
+  };
+
+  useEffect(() => {
+    if (isMusicPlaying) {
+      audio.play();
+      audio.loop = true;
+    } else {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+  }, [isMusicPlaying, audio]);
+
   return (
     <div className="App">
       <Fullscreen toggleFullscreenCallback={toggleFullscreen} />
       <Canvas
         resizeOnFullscreen={isFullscreen}
         lineWidth={lineWidth}
-        isVariable={isVariable}
         setLineWidth={setLineWidth}
+        isVariable={isVariable}
         color={color}
         isRainbow={isRainbow}
       />
@@ -56,6 +75,8 @@ function App() {
             setColor={setColor}
             isRainbow={isRainbow}
             setIsRainbow={setIsRainbow}
+            isMusicPlaying={isMusicPlaying}
+            toggleMusic={toggleMusic}
           />
           <Erase />
           <Screenshot />

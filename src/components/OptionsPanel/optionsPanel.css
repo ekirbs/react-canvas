@@ -64,19 +64,19 @@
 }
 
 .shapes {
-  background-color: #52307c
+  background-color: #b491c8
 }
 
 .color {
-  background-color: #b491c8;
-}
-
-.effects {
   background-color: #7c5295;
 }
 
-.settings {
+.effects {
   background-color: #663a82;
+}
+
+.settings {
+  background-color: #52307c;
 }
 
 .options-panel-content {

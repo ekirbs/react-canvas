@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { GithubPicker } from 'react-color';
 import { FaRainbow } from 'react-icons/fa';
 

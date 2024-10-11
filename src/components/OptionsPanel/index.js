@@ -4,7 +4,7 @@ import LineWidthControls from './LineWidthControls';
 import ShapesControls from './ShapesControls';
 import ColorControls from './ColorControls';
 import EffectsControls from './EffectsControls';
-import OptionsControls from './OptionsControls';
+import SettingsControls from './SettingsControls';
 
 import { MdOutlineLineWeight } from 'react-icons/md';
 import { IoMdColorPalette } from 'react-icons/io';
@@ -24,6 +24,8 @@ function OptionsPanel({
   setColor,
   isRainbow,
   setIsRainbow,
+  isMusicPlaying,
+  toggleMusic,
 }) {
   const [activeTab, setActiveTab] = useState('line-width');
 
@@ -41,16 +43,23 @@ function OptionsPanel({
       case 'shapes':
         return <ShapesControls />;
       case 'color':
-        return <ColorControls
-          color={color}
-          setColor={setColor}
-          isRainbow={isRainbow}
-          setIsRainbow={setIsRainbow}
-        />;
+        return (
+          <ColorControls
+            color={color}
+            setColor={setColor}
+            isRainbow={isRainbow}
+            setIsRainbow={setIsRainbow}
+          />
+        );
       case 'effects':
         return <EffectsControls />;
       case 'options':
-        return <OptionsControls />;
+        return (
+          <SettingsControls
+            isMusicPlaying={isMusicPlaying}
+            toggleMusic={toggleMusic}
+          />
+        );
       default:
         return (
           <LineWidthControls

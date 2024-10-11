@@ -71,8 +71,8 @@
 }
 
 .rainbow-icon  {
-  height: 30px;
-  width: 30px;
+  height: 50px;
+  width: 50px;
   animation: rainbow 5s linear infinite;
 }
 
