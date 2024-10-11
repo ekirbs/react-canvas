@@ -82,24 +82,24 @@ function OptionsPanel({
           >
             <MdOutlineLineWeight className="options-panel-tab-icon"></MdOutlineLineWeight>
           </button>
-          <button
+          {/* <button
             className="options-panel-tab shapes"
             onClick={() => setActiveTab('shapes')}
           >
             <FaStar className="options-panel-tab-icon"></FaStar>
-          </button>
+          </button> */}
           <button
             className="options-panel-tab color"
             onClick={() => setActiveTab('color')}
           >
             <IoMdColorPalette className="options-panel-tab-icon"></IoMdColorPalette>
           </button>
-          <button
+          {/* <button
             className="options-panel-tab effects"
             onClick={() => setActiveTab('effects')}
           >
             <FaWandSparkles className="options-panel-tab-icon"></FaWandSparkles>
-          </button>
+          </button> */}
           <button
             className="options-panel-tab settings"
             onClick={() => setActiveTab('options')}
