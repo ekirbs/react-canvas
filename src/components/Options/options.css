@@ -19,10 +19,19 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.options {
+.options-content {
   border-radius: 50%;
   height: 100%;
   width: 100%;
+}
+
+.options-icon {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
 }
 
 .options-container:active {

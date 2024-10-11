@@ -8,9 +8,16 @@ function SettingsControls({ isMusicPlaying, toggleMusic }) {
     <div className="settings-controls-container">
       <h2 className="settings-controls-title">Settings</h2>
       <div className="settings-content">
-        <button onClick={toggleMusic} className="music-toggle">
-          {/* {isMusicPlaying ? 'Stop Music' : 'Play Music'} */}
-          {isMusicPlaying ? <FaVolumeHigh className='music-toggle-button' /> : <FaVolumeXmark className='music-toggle-button' />}
+        <button
+          onClick={toggleMusic}
+          // className="music-toggle"
+          className={`music-toggle ${isMusicPlaying ? 'music-on' : 'music-off'}`}
+        >
+          {isMusicPlaying ? (
+            <FaVolumeHigh className="music-icon" />
+          ) : (
+            <FaVolumeXmark className="music-icon" />
+          )}
         </button>
       </div>
     </div>
