@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import music from './assets/audio/music.mp3';
+import direDireDocks from './assets/audio/direDireDocks.mp3';
 import {
   Canvas,
   Fullscreen,
@@ -21,7 +21,7 @@ function App() {
   const [isRainbow, setIsRainbow] = useState(true);
 
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
-  const [audio] = useState(new Audio(music));
+  const [audio] = useState(new Audio(direDireDocks));
 
 
   const toggleFullscreen = (fullscreenStatus) => {
