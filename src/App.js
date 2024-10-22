@@ -7,7 +7,9 @@ import {
   OptionsPanel,
   Erase,
   Screenshot,
+  Tooltip,
 } from './components';
+
 import './App.css';
 
 function App() {
@@ -54,7 +56,9 @@ function App() {
 
   return (
     <div className="App">
-      <Fullscreen toggleFullscreenCallback={toggleFullscreen} />
+      <Tooltip text="Fullscreen">
+        <Fullscreen toggleFullscreenCallback={toggleFullscreen} />
+      </Tooltip>
       <Canvas
         resizeOnFullscreen={isFullscreen}
         lineWidth={lineWidth}
@@ -63,7 +67,10 @@ function App() {
         color={color}
         isRainbow={isRainbow}
       />
-      <Options toggleOptions={toggleOptions} />
+      <Tooltip text="Options">
+        <Options toggleOptions={toggleOptions} />
+      </Tooltip>
+
       {optionsVisible && (
         <>
           <OptionsPanel
@@ -79,7 +86,9 @@ function App() {
             toggleMusic={toggleMusic}
           />
           <Erase />
-          <Screenshot />
+          <Tooltip text="Screenshot">
+            <Screenshot />
+          </Tooltip>
         </>
       )}
     </div>

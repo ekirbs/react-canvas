@@ -8,9 +8,9 @@ import SettingsControls from './SettingsControls';
 
 import { MdOutlineLineWeight } from 'react-icons/md';
 import { IoMdColorPalette } from 'react-icons/io';
-import { FaWandSparkles } from 'react-icons/fa6';
+// import { FaWandSparkles } from 'react-icons/fa6';
 import { IoMdSettings } from 'react-icons/io';
-import { FaStar } from 'react-icons/fa';
+// import { FaStar } from 'react-icons/fa';
 
 import './optionsPanel.css';
 

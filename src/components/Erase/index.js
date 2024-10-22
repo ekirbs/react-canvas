@@ -2,6 +2,7 @@ import React from 'react';
 
 import { FaEraser } from 'react-icons/fa';
 
+import Tooltip from '../Tooltip';
 import './erase.css';
 
 function EraseBtn() {
@@ -12,11 +13,11 @@ function EraseBtn() {
   };
 
   return (
-    <>
+    <Tooltip text="Erase" className="erase-tooltip-container">
       <div className="erase-container">
         <FaEraser className="erase" onClick={clearCanvas} />
       </div>
-    </>
+    </Tooltip>
   );
 }
 

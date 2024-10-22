@@ -4,3 +4,4 @@ export { default as Options } from './Options';
 export { default as OptionsPanel } from './OptionsPanel';
 export { default as Erase } from './Erase';
 export { default as Screenshot } from './Screenshot';
+export { default as Tooltip } from './Tooltip';

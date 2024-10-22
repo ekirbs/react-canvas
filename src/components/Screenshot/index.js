@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaCamera } from 'react-icons/fa';
+import Tooltip from '../Tooltip';
 import './screenshot.css';
 
 function Screenshot() {
@@ -15,11 +16,11 @@ function Screenshot() {
   };
 
   return (
-    <>
+    <Tooltip text="Screenshot" className="screenshot-tooltip-container">
       <div className="screenshot-container">
         <FaCamera className="screenshot" onClick={takeScreenshot} />
       </div>
-    </>
+    </Tooltip>
   );
 }
 

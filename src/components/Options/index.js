@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 import { FaBars, FaTimes } from 'react-icons/fa';
 
+import Tooltip from '../Tooltip';
+
 import './options.css';
 
 function Options({ toggleOptions }) {
@@ -10,7 +12,7 @@ function Options({ toggleOptions }) {
   const toggleDropdown = () => setShowDropdown(!showDropdown);
 
   return (
-    <>
+    <Tooltip text="Options" className="options-tooltip-container">
       <div className="options-container">
         <div className="options-content" onClick={toggleDropdown}>
           {showDropdown ? (
@@ -20,7 +22,7 @@ function Options({ toggleOptions }) {
           )}
         </div>
       </div>
-    </>
+    </Tooltip>
   );
 }
 

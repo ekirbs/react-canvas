@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 import { MdFullscreen, MdCloseFullscreen } from 'react-icons/md';
 
+import Tooltip from '../Tooltip';
+
 import './fullscreen.css';
 
 function Fullscreen({ toggleFullscreenCallback }) {
@@ -36,7 +38,7 @@ function Fullscreen({ toggleFullscreenCallback }) {
   };
 
   return (
-    <>
+    <Tooltip text="Fullscreen" className="fullscreen-tooltip-container">
       <div className="fullscreen-container">
         <div className="fullscreen-icon" onClick={toggleFullscreenIcon}>
           {fullscreenIcon ? (
@@ -52,7 +54,7 @@ function Fullscreen({ toggleFullscreenCallback }) {
           )}
         </div>
       </div>
-    </>
+    </Tooltip>
   );
 }
 
