@@ -11,9 +11,6 @@
   text-decoration: underline;
   font-size: 25px;
   text-align: center;
-  /* background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
 }
 
 
@@ -57,7 +54,7 @@
   border-radius: 10px;
 }
 
-.github-picker span div {
+.github-picker span div {  /* MOVE TO INLINE STYLING */
   height: 50px !important;
 }
 
