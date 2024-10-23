@@ -21,7 +21,7 @@ function ColorControls({ color, setColor, isRainbow, setIsRainbow }) {
   return (
     <>
       <div className="color-controls-container">
-        <h2 className="color-controls-title">Color Picker</h2>
+        {/* <h2 className="color-controls-title">Color Picker</h2> */}
         <div className="color-controls-content">
           <div className="color-display" style={{ backgroundColor: color }}>
             <p>Selected Color: {color}</p>

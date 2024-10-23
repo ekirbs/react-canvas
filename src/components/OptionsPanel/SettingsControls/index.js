@@ -6,7 +6,7 @@ import './settingsControls.css';
 function SettingsControls({ isMusicPlaying, toggleMusic }) {
   return (
     <div className="settings-controls-container">
-      <h2 className="settings-controls-title">Settings</h2>
+      {/* <h2 className="settings-controls-title">Settings</h2> */}
       <div className="settings-content">
         <button
           onClick={toggleMusic}

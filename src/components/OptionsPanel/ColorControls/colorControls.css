@@ -1,6 +1,6 @@
 .color-controls-container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   height: 100%;
@@ -57,6 +57,10 @@
   border-radius: 10px;
 }
 
+.github-picker span div {
+  height: 50px !important;
+}
+
 .rainbow-color {
   height: 50px;
   width: 50px;
@@ -89,16 +93,14 @@
 @media screen and (max-width: 800px) and (min-height: 500px) {
   .color-controls-content {
     flex-direction: column;
-    /* justify-content: flex-start; */
   }
 
   .color-display {
     width: 210px;
     border-radius: 0;
-    /* margin: 10px 0; */
   }
 
   .github-picker {
-    border-radius: 0px;;
+    border-radius: 0px;
   }
 }
